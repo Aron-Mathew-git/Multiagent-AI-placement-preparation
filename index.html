@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus AI - Career Intelligence Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h2>NEXUS <span class="badge">AI</span></h2>
+      </div>
+
+      <button id="new-session-btn" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>New Mock Session</span>
+      </button>
+
+      <div class="session-section">
+        <h3>RECENT INTERVIEWS</h3>
+        <div id="session-list" class="session-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <span class="dot"></span>
+          <span>AI Interviewer Ready</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Workspace -->
+    <main class="workspace">
+      <!-- Top header bar -->
+      <header class="workspace-header">
+        <div class="header-info">
+          <h1 id="active-session-title">System Design: Distributed Cache</h1>
+          <p id="active-session-status">Voice & Logic Feedback Active</p>
+        </div>
+        <div class="header-controls">
+          <button id="toggle-intel-btn" class="btn-toggle-intel" title="Toggle Career Intelligence Panel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Job Intel</span>
+          </button>
+          <div class="diagnostic-score">
+            <span class="label">Readiness</span>
+            <span class="value" id="header-readiness-val">84%</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Chat Log Area -->
+      <section id="chat-log" class="chat-log">
+        <!-- Dynamically populated chat bubbles -->
+      </section>
+
+      <!-- Prompt Input Panel -->
+      <footer class="input-panel">
+        <div class="input-container">
+          <textarea id="chat-input" placeholder="Explain your design, ask a system design question, or speak your answer..." rows="1"></textarea>
+          
+          <div class="input-actions">
+            <div class="left-actions">
+              <button id="voice-btn" class="action-btn" title="Toggle Voice Input (Speech-to-Text)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                <span>Voice</span>
+              </button>
+              <div id="recording-toast" class="recording-toast">Listening...</div>
+            </div>
+            
+            <button id="send-btn" class="send-btn" title="Send Message">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Career Intelligence Panel (Right Sidebar) -->
+    <aside id="intel-panel" class="intel-panel">
+      <!-- Panel Header -->
+      <div class="intel-header">
+        <div class="intel-meta">
+          <h3 id="target-job-role">Distributed Systems Engineer</h3>
+          <p class="section-subtitle">Career Fit Analysis</p>
+        </div>
+        <div class="radial-progress-container">
+          <svg class="progress-ring" width="56" height="56">
+            <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.04)" stroke-width="4.5" fill="transparent" r="22" cx="28" cy="28"/>
+            <circle id="intel-ring-circle" class="progress-ring__circle" stroke="url(#intel-gradient)" stroke-width="4.5" stroke-dasharray="138.23" stroke-dashoffset="138.23" fill="transparent" r="22" cx="28" cy="28" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="intel-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#8b5cf6" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div id="intel-score-percentage" class="intel-score-val">0%</div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="intel-tabs">
+        <button id="tab-skills" class="intel-tab-btn active">Skills Matrix</button>
+        <button id="tab-guide" class="intel-tab-btn">Complete Guide</button>
+      </div>
+
+      <!-- Tab Content: Skills Matrix -->
+      <div id="intel-content-skills" class="intel-tab-content active">
+        <div class="skills-grid" id="skills-grid">
+          <!-- Dynamically populated skills -->
+        </div>
+      </div>
+
+      <!-- Tab Content: Complete Career Guide -->
+      <div id="intel-content-guide" class="intel-tab-content">
+        <div class="guide-accordion">
+          <div class="guide-section active" data-section="roadmap">
+            <div class="guide-section-header">
+              <span>🗺️ Preparation Roadmap</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="guide-section-body" id="guide-roadmap-content">
+              <!-- Roadmap details dynamic -->
+            </div>
+          </div>
+
+          <div class="guide-section" data-section="questions">
+            <div class="guide-section-header">
+              <span>❓ High-Frequency Questions</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="guide-section-body" id="guide-questions-content">
+              <!-- Questions details dynamic -->
+            </div>
+          </div>
+
+          <div class="guide-section" data-section="resources">
+            <div class="guide-section-header">
+              <span>📚 Recommended Resources</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="guide-section-body" id="guide-resources-content">
+              <!-- Resources details dynamic -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
